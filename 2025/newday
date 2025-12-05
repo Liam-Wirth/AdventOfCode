@@ -1,0 +1,13 @@
+#!/bin/sh
+day=$1
+mkdir -p bin/day$day
+cat > bin/day$day/dune <<EOF
+(executable
+ (name main)
+ (public_name day$day))
+EOF
+
+cat > bin/day$day/main.ml <<EOF
+let () = print_endline "Day $day"
+EOF
+
